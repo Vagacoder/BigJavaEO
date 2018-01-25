@@ -1,17 +1,22 @@
 package BigJavaCh09;
 
-public class Vehicle {
-	private int numberOfTires;
 
-	public int getNumberOfTires() {
-		return numberOfTires;
-	}
+public class Vehicle
+{
+   private int numberOfTires;
 
-	public void setNumberOfTires(int newValue) {
-		numberOfTires = newValue;
-	}
+   public int getNumberOfTires() 
+   {
+      return numberOfTires; 
+   }
 
-	public String getDescription() {
-		return "A vehicle with " + numberOfTires + " tires";
-	}
+   public void setNumberOfTires(int newValue) 
+   { 
+      numberOfTires = newValue;
+   }
+
+   public String getDescription()
+   {
+      return "A vehicle with " + numberOfTires + " tires";
+   }
 }
