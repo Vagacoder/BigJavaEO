@@ -1,7 +1,7 @@
 package BigJavaCh04;
 
 /**
- * A cash register totals up sales and computes change due.
+ * 2 A cash register totals up sales and computes change due. 3
  */
 public class CashRegister {
 	public static final double QUARTER_VALUE = 0.25;
@@ -60,30 +60,4 @@ public class CashRegister {
 		payment = 0;
 		return change;
 	}
-
-	public void enterDollars(int dollars) {
-
-		payment = payment + dollars;
-	}
-
-	public void enterQuarters(int quarters) {
-
-		payment = payment + quarters * QUARTER_VALUE;
-	}
-
-	public void enterDimes(int dimes) {
-
-		payment = payment + dimes * DIME_VALUE;
-	}
-
-	public void enterNickels(int nickels) {
-
-		payment = payment + nickels * NICKEL_VALUE;
-	}
-
-	public void enterPennies(int pennies) {
-
-		payment = payment + pennies * PENNY_VALUE;
-	}
-
 }
