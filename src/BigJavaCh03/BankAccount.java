@@ -1,104 +1,75 @@
 package BigJavaCh03;
 
 /**
- * A bank account has a balance that can be changed by deposit and withdraw.
- * 
- * @author Skuller
- *
- */
+   A bank account has a balance that can be changed by 
+   deposits and withdrawals.
+*/
+public class BankAccount
+{  
+   private double balance;
+   private int transaction;
+   final private double transactionFee = 5;
+   final private int monthlyTransactionNumber = 6;
+   //private int withdraw;
 
-public class BankAccount {
+   /**
+      Constructs a bank account with a zero balance.
+   */
+   public BankAccount()
+   {   
+      balance = 0;
+      transaction = 0;
+      
+   }
 
-	private double balance = 0;
-	private int accountNumber;
-	private double interestRate;
-	private double expected_balance = 0;
+   /**
+      Constructs a bank account with a given balance.
+      @param initialBalance the initial balance
+   */
+   public BankAccount(double initialBalance)
+   {   
+      balance = initialBalance;
+   }
 
-	/**
-	 * Construct a bank account with account number.
-	 * 
-	 * @param accountNumber
-	 */
+   /**
+      Deposits money into the bank account.
+      @param amount the amount to deposit
+   */
+   public void deposit(double amount)
+   {  
+      balance = balance + amount;
+      transaction = transaction + 1;
+   }
 
-	public BankAccount(int accountNumber) {
+   /**
+      Withdraws money from the bank account.
+      @param amount the amount to withdraw
+   */
+   public void withdraw(double amount)
+   {   
+      balance = balance - amount;
+      transaction = transaction + 1;
+   }
 
-		balance = 0;
-		this.accountNumber = accountNumber;
-	}
-
-	/**
-	 * Construct a bank account with account number and initial balance.
-	 * 
-	 * @param accountNumber
-	 *            account number.
-	 * @param amount
-	 *            initial balance.
-	 */
-	public BankAccount(int accountNumber, double amount) {
-
-		balance = amount;
-		this.accountNumber = accountNumber;
-
-	}
-
-	/**
-	 * return the account number.
-	 * 
-	 * @return account number.
-	 */
-	public int getAccountNumber() {
-		return this.accountNumber;
-	}
-
-	/**
-	 * Deposit the money into the bank account.
-	 * 
-	 * @param amount
-	 *            the amount to deposit.
-	 */
-	public void deposit(double amount) {
-
-		balance = balance + amount;
-
-	}
-
-	/**
-	 * Withdraw the money from the bank account.
-	 * 
-	 * @param amount
-	 *            the amount to withdraw.
-	 */
-	public void withdraw(double amount) {
-
-		balance = balance - amount;
-
-	}
-
-	/**
-	 * Check the bank account balance
-	 * 
-	 * @return return the current balance in the bank account.
-	 */
-
-	public double getBalance() {
-
-		return balance;
-
-	}
-
-	public double addInterest(double rate) {
-
-		interestRate = rate;
-		expected_balance = balance * (1 + interestRate / 100);
-		return expected_balance;
-
-	}
-
-	public void transfer(BankAccount that, double amount) {
-
-		this.balance = this.balance - amount;
-		that.balance = that.balance + amount;
-
-	}
-
+   /**
+      Gets the current balance of the bank account.
+      @return the current balance
+   */
+   public double getBalance()
+   {   
+      return balance;
+   }
+   /**
+    * deduct transaction fee at the end of each month, first 5 transactions are free, rest of them
+    * is charged $1/time.
+    *  
+    */
+   
+   public void deductTransactionFee() {
+	   
+	   int chargeNumber = Math.max((transaction - monthlyTransactionNumber), 0);
+	   balance = balance - chargeNumber * transactionFee;
+	   transaction = 0;
+	   
+   }
 }

@@ -1,48 +1,46 @@
 package BigJavaCh03;
 
-public class Counter {
+/**
+   This class models a tally counter.
+*/
+public class Counter
+{
+   private int value;
+   private int limit;
 
-	private int value;
+   /**
+      Gets the current value of this counter.
+      @return the current value
+   */
+   public int getValue()
+   {
+      return value;
+   }
 
-	public Counter() {
+   /**
+      Advances the value of this counter by 1.
+   */
+   public void click() 
+   {
+      value = Math.min(this.limit, value + 1);
+   }
 
-		value = 0;
-
-	}
-
-	public Counter(int initial) {
-
-		value = initial;
-
-	}
-
-	public int getValue() {
-
-		return value;
-
-	}
-
-	public void click() {
-
-		value = value + 1;
-
-	}
-
-	public void reset() {
-
-		value = 0;
-
-	}
-
-	public void unclick() {
-
-		value = value - 1;
-
-	}
-
-	public void undo() {
-
-		value = Math.max(value - 1, 0);
-
-	}
+   /**
+      Resets the value of this counter to 0.
+   */
+   public void reset()
+   {
+      value = 0;
+   }
+   
+   public void undo() {
+	   
+	   value = Math.max(0, value-1);
+   }
+   
+   public void setLimit(int limit) {
+	   this.limit = limit;
+	   
+   }
+   
 }
