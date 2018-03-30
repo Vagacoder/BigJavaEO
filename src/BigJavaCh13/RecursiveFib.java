@@ -10,6 +10,7 @@ public class RecursiveFib {
 	Scanner in = new Scanner(System.in);
 	System.out.print("Enter n: ");
 	int n = in.nextInt();
+	in.close();
 
 	for (int i = 1; i <= n; i++) {
 	    long f = fib(i);
