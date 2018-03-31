@@ -1,11 +1,17 @@
 package BigJavaCh13;
 
+import java.util.*;
+
 /**
  * This class solves the eight queens problem using backtracking.
  */
 public class EightQueens {
     public static void main(String[] args) {
-	solve(new PartialSolution(0));
+	System.out.println("Input number of board size: ");
+	Scanner in = new Scanner(System.in);
+	int nQueens = in.nextInt();
+	solve(new PartialSolution(0, nQueens));
+	in.close();
     }
 
     /**

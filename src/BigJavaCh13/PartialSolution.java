@@ -7,8 +7,8 @@ import java.util.*;
  */
 public class PartialSolution {
     private Queen[] queens;
-    private static final int NQUEENS = 8;
-
+    // private static final int NQUEENS = 8;
+    private int nQueens;
     public static final int ACCEPT = 1;
     public static final int ABANDON = 2;
     public static final int CONTINUE = 3;
@@ -19,8 +19,9 @@ public class PartialSolution {
      * @param size
      *            the size
      */
-    public PartialSolution(int size) {
+    public PartialSolution(int size, int nQueens) {
 	queens = new Queen[size];
+	this.nQueens = nQueens;
     }
 
     /**
@@ -36,7 +37,7 @@ public class PartialSolution {
 		}
 	    }
 	}
-	if (queens.length == NQUEENS) {
+	if (queens.length == nQueens) {
 	    return ACCEPT;
 	} else {
 	    return CONTINUE;
@@ -50,12 +51,12 @@ public class PartialSolution {
      */
     public PartialSolution[] extend() {
 	// Generate a new solution for each column
-	PartialSolution[] result = new PartialSolution[NQUEENS];
+	PartialSolution[] result = new PartialSolution[nQueens];
 	for (int i = 0; i < result.length; i++) {
 	    int size = queens.length;
 
 	    // The new solution has one more row than this one
-	    result[i] = new PartialSolution(size + 1);
+	    result[i] = new PartialSolution(size + 1, nQueens);
 
 	    // Copy this solution into the new one
 	    for (int j = 0; j < size; j++) {
