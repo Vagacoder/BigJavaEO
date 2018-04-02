@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 John Jacob Astor,1763,1848
 "William Backhouse Astor, Jr.",1829,1892
 "John Jacob ""Jakey"" Astor VI",1912,1992
+=======
+12 34 56 78 9 11
+>>>>>>> efb862a39d74bd6e20b068b8961126c091cec98a

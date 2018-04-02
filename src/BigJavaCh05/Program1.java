@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**
  * CS 105 Theory and Practice I
  * CRN: 38066
@@ -33,3 +34,40 @@ public class Program1 {
 	}
 
 }
+=======
+/**
+ * CS 105 Theory and Practice I
+ * CRN: 38066
+ * Assignment: IntegerPairs
+ * 
+ * Statement of code ownership: I hereby state that I have written all of this
+ * code and I have not copied this code from any other person or source.
+ * 
+ * @author Qirui Hu
+ */
+
+package BigJavaCh05;
+
+import java.util.*;
+
+import BigJavaCh05.*;
+
+public class Program1 {
+
+	public static void main(String[] args) {
+
+		IntegerPairs1 string1 = new IntegerPairs1();
+
+		Scanner in = new Scanner(System.in);
+		System.out.print("Please enter four positive integers: ");
+		String input = in.next();
+		in.close();
+
+		string1.setPairString(input);
+
+		System.out.printf("Test result: %b\n", string1.hasTwoPairs());
+
+	}
+
+}
+>>>>>>> efb862a39d74bd6e20b068b8961126c091cec98a

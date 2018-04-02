@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package BigJavaCh04;
 
 public class E4_19 {
@@ -17,3 +18,24 @@ public class E4_19 {
 	}
 
 }
+=======
+package BigJavaCh04;
+
+public class E4_19 {
+
+	public static void main(String[] args) {
+
+		final String LETTER_H = "*   *\n*   *\n*****\n*   *\n*   *\n";
+		final String LETTER_E = "*****\n*\n****\n*\n*****\n";
+		final String LETTER_L = "*\n*\n*\n*\n*****\n";
+		final String LETTER_O = " *** \n*   *\n*   *\n*   *\n*   *\n ***\n";
+		System.out.println(LETTER_H);
+		System.out.println(LETTER_E);
+		System.out.println(LETTER_L);
+		System.out.println(LETTER_L);
+		System.out.println(LETTER_O);
+
+	}
+
+}
+>>>>>>> efb862a39d74bd6e20b068b8961126c091cec98a
