@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 package BigJavaCh02;
 
 import java.awt.*;
@@ -29,4 +27,3 @@ public class CenteredSquaresPrinter {
 	}
 
 }
->>>>>>> efb862a39d74bd6e20b068b8961126c091cec98a
