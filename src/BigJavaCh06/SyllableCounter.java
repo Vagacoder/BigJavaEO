@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package BigJavaCh06;
 
 import java.util.*;
@@ -23,29 +22,3 @@ public class SyllableCounter {
 		in.close();
 	}
 }
-=======
-package BigJavaCh06;
-
-import java.util.*;
-
-/**
- * This program counts the syllables of all words in a sentence.
- */
-public class SyllableCounter {
-	public static void main(String[] args) {
-		Scanner in = new Scanner(System.in);
-
-		System.out.println("Enter a sentence ending in a period.");
-
-		String input;
-		do {
-			input = in.next();
-			Word w = new Word(input);
-			int syllables = w.countSyllables();
-			System.out.println("Syllables in " + input + ": " + syllables);
-		} while (!input.endsWith("."));
-
-		in.close();
-	}
-}
->>>>>>> efb862a39d74bd6e20b068b8961126c091cec98a
