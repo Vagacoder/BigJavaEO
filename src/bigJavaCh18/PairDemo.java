@@ -21,11 +21,16 @@ public class PairDemo {
      *         containing str, or a pair (null, -1) if there is no match.
      */
     public static Pair<String, Integer> firstContaining(String[] strings, String sub) {
+	Pair<String, Integer> result = new Pair<>();
 	for (int i = 0; i < strings.length; i++) {
 	    if (strings[i].contains(sub)) {
-		return new Pair<>(strings[i], i);
+		result.first = strings[i];
+		result.second = i;
+		return result;
 	    }
 	}
-	return new Pair<>(null, -1);
+	result.first = null;
+	result.second = -1;
+	return result;
     }
 }
