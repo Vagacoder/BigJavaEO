@@ -12,12 +12,10 @@ public class MeasurerTester {
 		class PerimeterMeasurer implements Measurer {
 
 			public double measure(Object anObject) {
-
 				Rectangle rec = (Rectangle) anObject;
 				double perimeter = (rec.getHeight() + rec.getWidth()) * 2;
 				return perimeter;
 			}
-
 		}
 
 		Measurer areaMeas = new AreaMeasurer();
