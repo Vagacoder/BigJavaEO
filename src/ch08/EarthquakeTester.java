@@ -2,18 +2,22 @@ package ch08;
 
 import static org.junit.Assert.*;
 
-import org.junit.*;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 public class EarthquakeTester {
 
 	private static double score = 0;
 
-	@BeforeClass
+	@Before
 	public static void beforeTest() {
 		score = 0;
 	}
 
-	@AfterClass
+	@After
 	public static void afterTest() {
 		System.out.println(score);
 	}

@@ -1,5 +1,4 @@
 package ch10;
-
 /**
    A bank account has a balance that can be changed by 
    deposits and withdrawals.
@@ -31,7 +30,8 @@ public class BankAccount implements Measurable
    */
    public void deposit(double amount)
    {  
-      balance = balance + amount;
+      double newBalance = balance + amount;
+      balance = newBalance;
    }
 
    /**
@@ -40,7 +40,8 @@ public class BankAccount implements Measurable
    */
    public void withdraw(double amount)
    {   
-      balance = balance - amount;
+      double newBalance = balance - amount;
+      balance = newBalance;
    }
 
    /**
@@ -52,12 +53,15 @@ public class BankAccount implements Measurable
       return balance;
    }
 
-   public double getMeasure()
-   {
-      return balance;
-   }
-   
-   public String getName() {
-	   return null;
-   }
+@Override
+public double getMeasure() {
+	// TODO Auto-generated method stub
+	return balance;
+}
+
+@Override
+public String getName() {
+	// TODO Auto-generated method stub
+	return null;
+}
 }
