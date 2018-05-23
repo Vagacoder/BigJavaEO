@@ -1,39 +1,54 @@
 package ch10;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JFrame;
-import javax.swing.Timer;
+import java.awt.*;
+import java.awt.event.*;
 
-/** 	 	 	 	 	 	
-   This frame contains a moving rectangle.
-*/
-public class RectangleFrame extends JFrame
-{
-   private static final int FRAME_WIDTH = 300;
-   private static final int FRAME_HEIGHT = 400;
+import javax.swing.*;
 
-   private RectangleComponent scene;
+/**
+ * This frame contains a moving rectangle.
+ */
+public class RectangleFrame extends JFrame {
+    private static final int FRAME_WIDTH = 300;
+    private static final int FRAME_HEIGHT = 400;
 
-   class TimerListener implements ActionListener
-   {
-      public void actionPerformed(ActionEvent event)
-      {
-         scene.moveRectangleBy(1, 1);
-      }
-   }
+    private RectangleComponent scene;
+    private boolean movingRightDown = true;
 
-   public RectangleFrame()
-   {
-      scene = new RectangleComponent();
-      add(scene);
+    class TimerListener implements ActionListener {
 
-      setSize(FRAME_WIDTH, FRAME_HEIGHT);
-      
-      ActionListener listener = new TimerListener();
+	// default method
+	// Modified for E10.28, rectangle bouncing between boarders.
+	public void actionPerformed(ActionEvent event) {
+	    Rectangle box = scene.getBox();
+	    int box_left = box.x;
+	    int box_top = box.y;
+	    int box_right = box.x + box.width;
+	    int box_bottom = box.y + box.height;
 
-      final int DELAY = 100; // Milliseconds between timer ticks
-      Timer t = new Timer(DELAY, listener);
-      t.start();      
-   }
+	    if (box_bottom >= FRAME_HEIGHT - 30 || box_right >= FRAME_WIDTH - 20) {
+		movingRightDown = false;
+	    } else if (box_left == 0 || box_top == 0) {
+		movingRightDown = true;
+	    }
+	    if (movingRightDown) {
+		scene.moveRectangleBy(1, 1);
+	    } else {
+		scene.moveRectangleBy(-1, -1);
+	    }
+	}
+    }
+
+    public RectangleFrame() {
+	scene = new RectangleComponent();
+	add(scene);
+
+	setSize(FRAME_WIDTH, FRAME_HEIGHT);
+
+	ActionListener listener = new TimerListener();
+
+	final int DELAY = 50; // Milliseconds between timer ticks
+	Timer t = new Timer(DELAY, listener);
+	t.start();
+    }
 }
