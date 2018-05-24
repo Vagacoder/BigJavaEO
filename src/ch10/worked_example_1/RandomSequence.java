@@ -4,4 +4,10 @@ public class RandomSequence implements Sequence {
     public int next() {
 	return (int) (Integer.MAX_VALUE * Math.random());
     }
+
+	@Override
+	public boolean hasNext() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

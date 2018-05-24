@@ -7,4 +7,10 @@ public class SquareSequence implements Sequence {
 	n++;
 	return n * n;
     }
+
+	@Override
+	public boolean hasNext() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
