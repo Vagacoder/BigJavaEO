@@ -35,6 +35,8 @@ public class MouseTriangle {
 		pressCount++;
 		int x = e.getX();
 		int y = e.getY();
+		System.out.println(x);
+		System.out.println(y);
 		if (pressCount == 1) {
 		    Point p1 = new Point(x, y);
 		    this.p1 = p1;
