@@ -22,10 +22,12 @@ public class MovingCar extends JFrame {
     public MovingCar() {
 	setSize(600, 600);
 
-	CarComponent car1 = new CarComponent(0, 0, Color.red, 2);
+	//CarComponent car1 = new CarComponent(0, 0, Color.red, 2);
+	CarComponent1 car1 = new CarComponent1(0, 0, Color.red, 2);
 	add(car1);
 	setVisible(true);
-	CarComponent car2 = new CarComponent(200, 200, Color.black, 2);
+	//CarComponent car2 = new CarComponent(200, 200, Color.black, 2);
+	CarComponent1 car2 = new CarComponent1(200, 200, Color.black, 2);
 	add(car2);
 	setVisible(true);
 
