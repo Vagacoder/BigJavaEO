@@ -18,7 +18,7 @@ public class TranslateDemo {
 	// frame.setBounds(comp);
 
 	JOptionPane.showMessageDialog(frame, "Click OK to continue");
-
+	JOptionPane.showInputDialog("Input your name");
     }
 
 }

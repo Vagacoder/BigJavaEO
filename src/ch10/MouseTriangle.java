@@ -23,6 +23,7 @@ public class MouseTriangle {
 	    private Point p2;
 
 	    public MTriangleListener(JFrame frame) {
+		super();
 		this.frame = frame;
 	    }
 
