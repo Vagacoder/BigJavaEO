@@ -15,7 +15,12 @@ public class URLinputTest {
 
 	String line1 = in.nextLine();
 	System.out.println(line1);
-
+	String line2 = in.nextLine();
+	System.out.println(line2);
+	line2 = line2.replaceFirst("</", "REPLACED");
+	System.out.println(line2);
+	line2 = line2.replaceFirst("TIGER", "REPLACED");
+	System.out.println(line2);
 	in.close();
 
     }
