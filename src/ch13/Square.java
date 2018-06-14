@@ -1,6 +1,8 @@
 
 package ch13;
 
+// E13.2
+
 public class Square {
 
 	private int width;

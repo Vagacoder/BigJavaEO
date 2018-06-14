@@ -1,6 +1,8 @@
 
 package ch13;
 
+// sc4
+
 public class Pow2 {
 
 	public static void main(String[] args) {

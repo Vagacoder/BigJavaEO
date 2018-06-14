@@ -1,6 +1,7 @@
 
 package ch13;
 
+// E13.1
 public class RectangleArea {
 
 	public static void main(String[] args) {
