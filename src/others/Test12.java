@@ -1,20 +1,11 @@
 package others;
 
 public class Test12 {
-	
-	public static void main(String[] args) {
-		int j = 6;
 
-		while (j > 0)
+    public static void main(String[] args) {
+	int j = 6;
+	System.out.println(Math.floor(Math.log10(8)) + 1);
 
-		{
+    }
 
-		   System.out.print(j + ", ");
-
-		   j--;
-
-		}
-		
-	}
-	
 }
