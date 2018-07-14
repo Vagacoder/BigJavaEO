@@ -34,4 +34,20 @@ public class BinarySearcher {
 	    return -1;
 	}
     }
+
+    public static int searchString(String[] a, int low, int high, String s) {
+	if (low <= high) {
+	    int mid = (low + high) / 2;
+
+	    if (a[mid].compareTo(s) == 0) {
+		return mid;
+	    } else if (a[mid].compareTo(s) < 0) {
+		return searchString(a, mid + 1, high, s);
+	    } else {
+		return searchString(a, low, mid - 1, s);
+	    }
+	} else {
+	    return -1;
+	}
+    }
 }
