@@ -6,6 +6,9 @@ public class Test12 {
 	int j = 6;
 	System.out.println(Math.floor(Math.log10(8)) + 1);
 
+	String a = "abcdef";
+	System.out.println(a.substring(-1));
+
     }
 
 }
