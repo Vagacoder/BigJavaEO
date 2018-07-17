@@ -7,7 +7,7 @@ public class Test12 {
 	System.out.println(Math.floor(Math.log10(8)) + 1);
 
 	String a = "abcdef";
-	System.out.println(a.substring(-1));
+	System.out.println(a.substring(5, 6));
 
     }
 
