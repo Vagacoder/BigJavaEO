@@ -1,16 +1,12 @@
 package ch15;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 // E15.5
 
 public class FindJavaIdentifier {
-	
+
 	HashMap<String, List<String>> idMap = new HashMap<>();
 
 	public FindJavaIdentifier() {
@@ -19,17 +15,17 @@ public class FindJavaIdentifier {
 	public void importJavaFile(String javaFile) {
 		try {
 			Scanner in = new Scanner(new File(javaFile));
-			while(in.hasNextLine()) {
+			while (in.hasNextLine()) {
 				String line = in.nextLine();
 				String[] ids = line.split("[^A-za-z0-9_]+");
-				for(String id : ids) {
+				for (String id : ids) {
 					if (idMap.containsKey(id)) {
 						List<String> oldList = idMap.get(id);
 						oldList.add(line);
 						idMap.put(id, oldList);
 					} else {
 						List<String> newList = new LinkedList<>();
-						newList.add(line);
+						newList.add(line.trim());
 						idMap.put(id, newList);
 					}
 				}
@@ -40,7 +36,7 @@ public class FindJavaIdentifier {
 		}
 
 	}
-	
+
 	public void printIdLines(String id) {
 		if (idMap.containsKey(id)) {
 			System.out.println(idMap.get(id));
