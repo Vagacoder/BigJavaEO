@@ -24,6 +24,7 @@ package ch15;
 public class InnerClassExample1 {
 
 	// inner interface of Iterator for DataStructure class
+	// cannot declare interface inside a block, must outside method, constructor.
 	interface DataStructureIterator extends java.util.Iterator<Integer> {
 	};
 

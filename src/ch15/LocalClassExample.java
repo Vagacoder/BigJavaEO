@@ -14,6 +14,7 @@ public class LocalClassExample {
 
 			PhoneNumber(String phoneNumber) {
 				// Note: local var defined outside must be final or effectively final
+				// the line below change the NUMBER_LENGTH, it is a compiling error.
 				// NUMBER_LENGTH = 7;
 
 				// validate phonenumber, # of digits must be 10
