@@ -8,6 +8,11 @@ import javax.swing.*;
 import java.awt.*;
 
 class Calculator extends JFrame implements ActionListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	// create a frame
 	static JFrame f;
 
