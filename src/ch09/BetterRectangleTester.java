@@ -1,8 +1,7 @@
 package ch09;
 
 import static org.junit.Assert.*;
-
-import org.junit.*;
+import org.junit.jupiter.api.Test;
 
 public class BetterRectangleTester {
 
