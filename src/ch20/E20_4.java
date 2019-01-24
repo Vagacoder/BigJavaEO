@@ -19,6 +19,9 @@ that adds a red, green, or blue component to the background color of a panel in 
 center of the frame. This application can display a total of eight color combinations.
  */
 
+
+// !@#! Note: the JFrame background change is not visible, I have to change the background of JPanle
+// which is added to JFrame
 public class E20_4 {
 	JFrame frame1 = new JFrame();
 	JPanel panel1 = new JPanel();

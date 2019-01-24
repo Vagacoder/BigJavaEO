@@ -1,20 +1,24 @@
 package ch08;
 
 import static org.junit.Assert.*;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.AfterAll;
+//import org.junit.jupiter.api.BeforeAll;
+//import org.junit.jupiter.api.Test;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 public class EarthquakeTester {
 
 	private static double score = 0;
 
-	@BeforeAll
+	@Before
 	public static void beforeTest() {
 		score = 0;
 	}
 
-	@AfterAll
+	@After
 	public static void afterTest() {
 		System.out.println(score);
 	}
