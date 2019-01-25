@@ -1,6 +1,5 @@
 package ch20;
 
-
 import javax.swing.JFrame;
 
 public class ColorViewer
