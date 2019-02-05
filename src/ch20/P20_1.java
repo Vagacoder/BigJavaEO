@@ -1,5 +1,6 @@
 package ch20;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -7,48 +8,43 @@ import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Random;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
+import ch20.E20_7.Recs;
+import ch20.E20_7.ml;
 
 /*
-E20.7 Write a program that displays a number of rectangles at random positions. Supply
-menu items “Fewer” and “More” that generate fewer or more random rectangles.
-Each time the user selects “Fewer”, the count should be halved. Each time the user
-clicks on “More”, the count should be doubled.
+ * P20.1 Modify the program of Exercise E20.7 to replace the buttons with a slider to generate
+ *  more or fewer random rectangles.
+ *  
+ *  E20.7 Write a program that displays a number of rectangles at random positions. Supply
+ * menu items “Fewer” and “More” that generate fewer or more random rectangles.
+ * Each time the user selects “Fewer”, the count should be halved. Each time the user
+ * clicks on “More”, the count should be doubled.
  */
 
-public class E20_7 {
+public class P20_1 {
 
 	private final int WIDTH = 600;
 	private final int HEIGHT = 800;
 	private final int BOX_MAX_W = 80;
 	private final int BOX_MAX_H = 100;
 	private JFrame frame;
-	// private int numberOfRectangle;
+	private JSlider sliderBar;
+	// private int numberOfRectangle = 0;
 	private ArrayList<Recs> recList;
 
-	// constructor
-	public E20_7() {
-
+	public P20_1() {
 		frame = new JFrame();
-		// numberOfRectangle = 0;
 
-		JMenuBar menuBar = new JMenuBar();
-		JMenu menu = new JMenu("Rectangles");
+		sliderBar = new JSlider(-1, 100, -1);
+		sliderBar.addChangeListener(new ml());
 
-		JMenuItem few = new JMenuItem("Fewer");
-		JMenuItem more = new JMenuItem("More");
-		few.addActionListener(new ml(false));
-		more.addActionListener(new ml(true));
-
-		menu.add(few);
-		menu.add(more);
-
-		menuBar.add(menu);
-		frame.setJMenuBar(menuBar);
-		// frame.add(panel);
-		frame.setTitle("E20.7");
+		frame.add(sliderBar, BorderLayout.SOUTH);
+		frame.setTitle("P20.1");
 		frame.setSize(WIDTH, HEIGHT);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
@@ -56,18 +52,12 @@ public class E20_7 {
 	}
 
 	// inner class of action listener for buttons
-	class ml implements ActionListener {
-
-		private boolean more;
-
-		// constructor
-		public ml(boolean more) {
-			this.more = more;
-		}
+	class ml implements ChangeListener {
 
 		@Override
-		public void actionPerformed(ActionEvent e) {
-			drawRecs(more);
+		public void stateChanged(ChangeEvent e) {
+			int numberToDraw = sliderBar.getValue();
+			drawRecs(numberToDraw);
 
 		}
 
@@ -91,16 +81,16 @@ public class E20_7 {
 	}
 
 	// method to draw rectangles
-	public void drawRecs(boolean more) {
+	public void drawRecs(int numberToDraw) {
 		int numberOfRectangle = recList.size();
-		if (more) {
+		if (numberToDraw > numberOfRectangle) {
 			if (numberOfRectangle == 0) {
 				numberOfRectangle++;
 			} else {
 				numberOfRectangle *= 2;
 			}
 
-			for (int i = recList.size(); i < numberOfRectangle; i++) {
+			for (int i = recList.size(); i < numberToDraw; i++) {
 				int w = (int) (Math.random() * (BOX_MAX_W));
 				int h = (int) (Math.random() * (BOX_MAX_H));
 				int x = (int) (Math.random() * (WIDTH - w));
@@ -108,9 +98,9 @@ public class E20_7 {
 
 				Recs box = new Recs(x, y, w, h, Color.BLACK);
 				recList.add(box);
-				frame.add(box);
+				frame.add(box, BorderLayout.CENTER);
 				//frame.repaint();
-				frame.setVisible(true);
+				//frame.setVisible(true);
 			}
 
 		} else {
@@ -120,14 +110,14 @@ public class E20_7 {
 				frame.remove(box);
 				recList.remove(recList.size() - 1);
 				frame.repaint();
-				
+
 			}
 		}
+		frame.setVisible(true);
 	}
 
 	public static void main(String[] args) {
-
-		E20_7 frame = new E20_7();
+		P20_1 frame = new P20_1();
 
 	}
 
