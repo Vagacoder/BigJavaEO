@@ -8,6 +8,15 @@ import java.net.Socket;
 import java.util.Scanner;
 
 /*
+*  E23.3 Modify the BankServer program so that it can be terminated more elegantly. 
+Provide another socket on port 8889 through which an administrator can log in. 
+
+Support the commands LOGIN password, STATUS, PASSWORD newPassword, LOGOUT, and 
+SHUTDOWN. 
+
+The STATUS command should display the total number of clients that have logged 
+in since the server started.
+
 * E23.4
 Modify the BankServer program to provide complete error checking. For example,
 the program should check to make sure that there is enough money in the account
@@ -17,17 +26,18 @@ indicating the success or failure condition, followed by a string with response
 data or an error description.
 */
 
-public class BankService implements Runnable {
+public class BankService2 implements Runnable {
 
     private Socket s;
     private Scanner in;
     private PrintWriter out;
     private Bank bank;
-    private boolean isExit = false;
+    private BankServer2 bankServer;
 
-    public BankService(Socket socket, Bank bank){
+    public BankService2(Socket socket, Bank bank, BankServer2 server){
         this.s = socket;
         this.bank = bank;
+        this.bankServer = server;
     }
 
     @Override
@@ -47,16 +57,15 @@ public class BankService implements Runnable {
     }
 
     public void doService() throws IOException{
-        while(!isExit){
+        while(bankServer.isRunning){
             if(!in.hasNext()){
                 System.out.println("service is done.");
                 return;
             }
             System.out.println("doService() calling ...");
             String command = in.next();
-            if(command.equals("QUIT")){
-                // return;
-                isExit = true;
+            if(command.equals("QUIT") || !bankServer.isRunning){
+                return;
             }else{
                 executeCommand(command);
             }   

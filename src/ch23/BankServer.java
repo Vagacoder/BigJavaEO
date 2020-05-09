@@ -5,7 +5,14 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /*
-*
+* E23.4
+Modify the BankServer program to provide complete error checking. For example,
+the program should check to make sure that there is enough money in the account
+when withdraw­ing. Send appropriate error reports back to the client. Enhance the
+protocol to be similar to HTTP, in which each server response starts with a number
+indicating the success or failure condition, followed by a string with response 
+data or an error description.
+
 */
 
 public class BankServer {
