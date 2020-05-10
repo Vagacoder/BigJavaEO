@@ -1,8 +1,6 @@
 package ch23;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Scanner;
@@ -21,31 +19,29 @@ in since the server started.
 
 public class BankAdminService implements Runnable{
 
-    public interface bankServerListener{
-        public void onShutDown();
-    }
-
-    private BankServer2 bankServer;
+    private IBankServerListener bankServer;
     private Socket s;
     private Scanner in;
     private PrintWriter out;
     private String password = "123";
     private boolean isLogin = false;
 
-    public BankAdminService(Socket socket, BankServer2 server){
+    public BankAdminService(Socket socket){
         this.s = socket;
-        this.bankServer = server;
     }
 
     @Override
     public void run() {
         try {
-            try {in = new Scanner(s.getInputStream());
-            out = new PrintWriter(s.getOutputStream());
-            doService();
-        }finally{
-            s.close();
-        }
+            try {
+                in = new Scanner(s.getInputStream());
+                out = new PrintWriter(s.getOutputStream());
+                doService();
+            }finally{
+                s.close();
+                in.close();
+                out.close();
+            }
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -53,7 +49,7 @@ public class BankAdminService implements Runnable{
     }
 
     private void doService(){
-        while(bankServer.isRunning){
+        while(bankServer.isRunning()){
             if(!in.hasNext()){
                 System.out.println("admin service is done.");
                 return;
@@ -108,6 +104,13 @@ public class BankAdminService implements Runnable{
                 out.println("Please login first");
                 out.flush();
             }
+        }else{
+            out.println("Invalid command");
+            out.flush();
         }
+    }
+
+    public void addBankServerListener(IBankServerListener listener){
+        this.bankServer = listener;
     }
 }

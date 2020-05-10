@@ -32,12 +32,11 @@ public class BankService2 implements Runnable {
     private Scanner in;
     private PrintWriter out;
     private Bank bank;
-    private BankServer2 bankServer;
+    private IBankServerListener bankServer;
 
-    public BankService2(Socket socket, Bank bank, BankServer2 server){
+    public BankService2(Socket socket, Bank bank){
         this.s = socket;
         this.bank = bank;
-        this.bankServer = server;
     }
 
     @Override
@@ -46,9 +45,12 @@ public class BankService2 implements Runnable {
             try{
                 in = new Scanner(s.getInputStream());
                 out = new PrintWriter(s.getOutputStream());
+                out.println("Welcome to bank service");
                 doService();
             }finally{
                 s.close();
+                in.close();
+                out.close();
             }
         }catch(IOException ex){
             ex.getMessage();
@@ -56,15 +58,19 @@ public class BankService2 implements Runnable {
         }
     }
 
-    public void doService() throws IOException{
-        while(bankServer.isRunning){
+    private void doService() throws IOException{
+        while(bankServer.isRunning()){
             if(!in.hasNext()){
-                System.out.println("service is done.");
+                System.out.println("Client service is done.");
                 return;
             }
             System.out.println("doService() calling ...");
             String command = in.next();
-            if(command.equals("QUIT") || !bankServer.isRunning){
+            if(command.equals("QUIT") || !bankServer.isRunning()){
+                System.out.println("Client service is done.");
+                out.println("Client disconneting ... ");
+                out.flush();
+                bankServer.clientDisconnect();
                 return;
             }else{
                 executeCommand(command);
@@ -72,14 +78,25 @@ public class BankService2 implements Runnable {
         }
     }
 
-    public void executeCommand(String command){
+    private void executeCommand(String command){
         int account = in.nextInt();
         if(command.equals("DEPOSIT")){
             double amount = in.nextDouble();
-            bank.deposit(account, amount);
+            if(amount <= 0){
+                out.println("Invalid ammout");
+                out.flush();
+            }else{
+                bank.deposit(account, amount);
+            }
         }else if(command.equals("WITHDRAW")){
             double amount = in.nextDouble();
-            bank.withdraw(account, amount);
+            double currentBalance = bank.getBalance(account);
+            if(currentBalance <= amount){
+                out.println("Invalid ammout");
+                out.flush();
+            }else{
+                bank.withdraw(account, amount);
+            }
         }else if(!command.equals("BALANCE")){
             out.println("Invalid command");
             out.flush();
@@ -87,6 +104,10 @@ public class BankService2 implements Runnable {
         }
         out.println(account + " " + bank.getBalance(account));
         out.flush();
+    }
+
+    public void addBankServerListener(IBankServerListener listener){
+        this.bankServer = listener;
     }
 
 }
