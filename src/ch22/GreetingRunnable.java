@@ -37,6 +37,7 @@ public class GreetingRunnable implements Runnable
       }
       catch (InterruptedException exception)
       {
+         exception.printStackTrace();
       }
    }
 }
