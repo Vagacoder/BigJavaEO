@@ -94,7 +94,6 @@ public class BankServer2 implements IBankServerListener {
                     e.printStackTrace();
                 }
             }
-
         });
     }
 

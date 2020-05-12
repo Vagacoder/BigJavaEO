@@ -55,6 +55,7 @@ public class BankService2 implements Runnable {
         }catch(IOException ex){
             ex.getMessage();
             ex.printStackTrace();
+            bankServer.clientDisconnect();
         }
     }
 
@@ -64,7 +65,7 @@ public class BankService2 implements Runnable {
                 System.out.println("Client service is done.");
                 return;
             }
-            System.out.println("doService() calling ...");
+            System.out.println("BankService2 doService() calling ...");
             String command = in.next();
             if(command.equals("QUIT") || !bankServer.isRunning()){
                 System.out.println("Client service is done.");
@@ -91,7 +92,7 @@ public class BankService2 implements Runnable {
         }else if(command.equals("WITHDRAW")){
             double amount = in.nextDouble();
             double currentBalance = bank.getBalance(account);
-            if(currentBalance <= amount){
+            if(currentBalance <= amount || amount <= 0){
                 out.println("Invalid ammout");
                 out.flush();
             }else{

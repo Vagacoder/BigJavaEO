@@ -68,7 +68,7 @@ public class WebGet {
             Pattern p = Pattern.compile("<title>([\\w\\W]+?)</title>");
             
             while(in.hasNextLine()){
-                // * Scanner.nextLine() excludes any line separator at the end
+                // * Note: Scanner.nextLine() excludes any line separator at the end
                 String input = in.nextLine();
                 if(isHeaderOnly && input.trim().equals("")){
                     break;
