@@ -18,26 +18,24 @@ public class GreetingRunnable implements Runnable
       Constructs the runnable object.
       @param aGreeting the greeting to display
    */
-   public GreetingRunnable(String aGreeting, int delay)
-   {
+   public GreetingRunnable(String aGreeting, int delay){
       greeting = aGreeting;
       delayTime = delay;
    }
 
-   public void run()
-   {
-      try
-      {
-         for (int i = 1; i <= REPETITIONS; i++)
+   public void run(){
+      try{
+         for (int i = 1; i <= REPETITIONS && !Thread.interrupted(); i++)
          {
             Date now = new Date();
             System.out.println(now + " " + greeting);
             Thread.sleep(delayTime);         
          }
-      }
-      catch (InterruptedException exception)
+      }catch (InterruptedException exception)   // ! catch ex of interrupt during sleep
       {
          exception.printStackTrace();
+         // TODO: some clean up 
+         return;
       }
    }
 }

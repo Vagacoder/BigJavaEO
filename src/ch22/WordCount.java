@@ -1,6 +1,9 @@
 package ch22;
 
-// E22.7 Write a program WordCount that counts the words in one or more files. Start a new thread for each file.
+/*
+* E22.7 Write a program WordCount that counts the words in one or more files. 
+Start a new thread for each file.
+*/
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -25,6 +28,7 @@ public class WordCount implements Runnable {
 			count++;
 		}
 		System.out.println(inFile.getName() + ": " + count);
+		in.close();
 	}
 
 	public static void main(String[] args) throws FileNotFoundException {
