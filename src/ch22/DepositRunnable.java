@@ -7,7 +7,8 @@ package ch22;
 public class DepositRunnable implements Runnable
 {
    private static final int DELAY = 1; 
-   private BankAccount account;
+   // private BankAccount account;
+   private BankAccountX account;
    private double amount;
    private int count;
 
@@ -17,7 +18,7 @@ public class DepositRunnable implements Runnable
       @param anAmount the amount to deposit in each repetition
       @param aCount the number of repetitions
    */
-   public DepositRunnable(BankAccount anAccount, double anAmount,
+   public DepositRunnable(BankAccountX anAccount, double anAmount,
          int aCount)
    {
       account = anAccount;

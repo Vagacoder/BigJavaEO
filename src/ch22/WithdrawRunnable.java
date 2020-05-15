@@ -7,7 +7,8 @@ package ch22;
 public class WithdrawRunnable implements Runnable
 {
    private static final int DELAY = 1; 
-   private BankAccount account;
+   // private BankAccount account;
+   private BankAccountX account;
    private double amount;
    private int count;
 
@@ -17,7 +18,7 @@ public class WithdrawRunnable implements Runnable
       @param anAmount the amount to withdraw in each repetition
       @param aCount the number of repetitions
    */
-   public WithdrawRunnable(BankAccount anAccount, double anAmount,
+   public WithdrawRunnable(BankAccountX anAccount, double anAmount,
          int aCount)
    {
       account = anAccount;

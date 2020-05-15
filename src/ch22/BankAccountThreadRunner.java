@@ -9,7 +9,8 @@ public class BankAccountThreadRunner
 {
    public static void main(String[] args)
    {
-      BankAccount account = new BankAccount();
+      // BankAccount account = new BankAccount();
+      BankAccountX account = new BankAccountX();
       final double AMOUNT = 100;
       final int REPETITIONS = 100;
       final int THREADS = 100;
