@@ -4,6 +4,14 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/*
+* The class is modified from BankAccoutn class.
+! This is a good example of Lock and Condition, must understand it completely!
+
+! Check paradigm of {lock/try/finally/unloc} in deposit() and withdraw()
+
+*/
+
 public class BankAccountX {
 
     private double balance;
