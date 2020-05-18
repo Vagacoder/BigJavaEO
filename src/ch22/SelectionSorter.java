@@ -8,7 +8,9 @@ import java.awt.*;
 import ch14.ArrayUtil;
 
 /*
-*
+* P22.5 Enhance the SelectionSorter of Section 22.6 so that the current minimum 
+is painted in yellow.
+
 */
 
 public class SelectionSorter {
@@ -16,6 +18,8 @@ public class SelectionSorter {
     private int[] a;
     private int markedPosition = -1;
     private int alreadySorted = -1;
+    // * E22.5
+    private int minPos = -1;
 
     // * Lock for multiple frames; For single frame, no need locl at all
     private Lock sortStateLock;
@@ -31,7 +35,7 @@ public class SelectionSorter {
 
     public void sort() throws InterruptedException {
         for(int i = 0; i < a.length; i++){
-            int minPos = minimumPosition(i);
+            minPos = minimumPosition(i);
             sortStateLock.lock();
             try{
                 ArrayUtil.swap(a, minPos, i);
@@ -47,7 +51,7 @@ public class SelectionSorter {
     }
 
     private int minimumPosition(int from) throws InterruptedException {
-        int minPos = from;
+        minPos = from;
         markedPosition = from;
         pause(2);
         for(int i = from+1; i < a.length; i++){
@@ -74,6 +78,8 @@ public class SelectionSorter {
                     g.setColor(Color.RED);
                 }else if( i <= alreadySorted){
                     g.setColor(Color.BLUE);
+                }else if(i == minPos){
+                    g.setColor(Color.YELLOW);
                 }else{
                     g.setColor(Color.BLACK);
                 }

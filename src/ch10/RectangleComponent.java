@@ -21,29 +21,27 @@ public class RectangleComponent extends JComponent {
     private Rectangle box;
 
     public Rectangle getBox() {
-	return box;
+        return box;
     }
 
     public RectangleComponent() {
-	// The rectangle that the paintComponent method draws
-	box = new Rectangle(BOX_X, BOX_Y, BOX_WIDTH, BOX_HEIGHT);
+        // The rectangle that the paintComponent method draws
+        box = new Rectangle(BOX_X, BOX_Y, BOX_WIDTH, BOX_HEIGHT);
     }
 
     public void paintComponent(Graphics g) {
-	Graphics2D g2 = (Graphics2D) g;
-	g2.draw(box);
+        Graphics2D g2 = (Graphics2D) g;
+        g2.draw(box);
     }
 
     /**
      * Moves the rectangle by a given amount.
      * 
-     * @param dx
-     *            the amount to move in the x-direction
-     * @param dy
-     *            the amount to move in the y-direction
+     * @param dx the amount to move in the x-direction
+     * @param dy the amount to move in the y-direction
      */
     public void moveRectangleBy(int dx, int dy) {
-	box.translate(dx, dy);
-	repaint();
+        box.translate(dx, dy);
+        repaint();
     }
 }
