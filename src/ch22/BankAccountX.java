@@ -10,6 +10,11 @@ import java.util.concurrent.locks.ReentrantLock;
 
 ! Check paradigm of {lock/try/finally/unloc} in deposit() and withdraw()
 
+* E22.9 Add a condition to the deposit method of the BankAccount class in Section 22.5,
+restricting deposits to $100,000 (the insurance limit of the U.S. government). The
+method should block until sufficient money has been withdrawn by another thread.
+Test your program with a large number of deposit threads.
+
 */
 
 public class BankAccountX {
@@ -25,6 +30,10 @@ public class BankAccountX {
     }
 
     public void deposit(double amount) {
+        if(amount > 100000){
+            System.out.println("Deposite amount is beyond maximum limit");
+            return;
+        }
         balanceChangeLock.lock();
         try {
             System.out.print("Depositing " + amount);

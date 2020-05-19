@@ -15,7 +15,38 @@ public class E22_1 implements Runnable{
 
 	@Override
 	public void run() {
-		ll.addFirst(1);;
+		ll.addFirst(1);
+		for(int i = 0; i < 10;i++){}
+		ll.addFirst(2);
+		for(int i = 0; i < 10;i++){}
+		ll.addFirst(3);
+		for(int i = 0; i < 10;i++){}
+		ll.addFirst(4);
+		for(int i = 0; i < 10;i++){}
+		ll.addFirst(5);
+		for(int i = 0; i < 10;i++){}
+		ll.addFirst(6);
+		for(int i = 0; i < 10;i++){}
+		ll.addFirst(7);
+		for(int i = 0; i < 10;i++){}
+		ll.addFirst(8);
+		for(int i = 0; i < 10;i++){}
+		ll.addFirst(9);
+		for(int i = 0; i < 10;i++){}
+		ll.addFirst(10);
+		for(int i = 0; i < 10;i++){}
+		ll.addFirst(11);
+		for(int i = 0; i < 10;i++){}
+		ll.addFirst(12);
+		for(int i = 0; i < 10;i++){}
+		ll.addFirst(13);
+		for(int i = 0; i < 10;i++){}
+		ll.addFirst(14);
+		ll.addFirst(15);
+		ll.addFirst(16);
+		ll.addFirst(17);
+		ll.addFirst(18);
+		ll.addFirst(19);
 	}
 
 	
@@ -30,8 +61,9 @@ public class E22_1 implements Runnable{
 		t1.start();
 		t2.start();
 
-		//int a = ll1.getFirst();
+		// int a = ll1.getFirst();
 		//System.out.println(a);
+		for(int i = 0; i < 10000000;i++){}
 		for (int b : ll1) {
 			System.out.println(b);
 		}
