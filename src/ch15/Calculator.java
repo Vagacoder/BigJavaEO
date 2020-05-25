@@ -2,8 +2,9 @@ package ch15;
 
 import java.util.*;
 
-/**
+/*
  * This calculator uses the reverse Polish notation.
+
  */
 public class Calculator {
 	public static void main(String[] args) {
@@ -11,6 +12,7 @@ public class Calculator {
 		Stack<Integer> results = new Stack<>();
 		System.out.println("Enter one number or operator per line, Q to quit. ");
 		boolean done = false;
+
 		while (!done) {
 			String input = in.nextLine();
 

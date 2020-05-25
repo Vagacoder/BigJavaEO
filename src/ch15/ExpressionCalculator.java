@@ -2,8 +2,35 @@ package ch15;
 
 import java.util.*;
 
-/**
+/*
  * This program evaluates arithmetic expressions, using two stacks.
+   
+? Alogrithm:
+? If you read a number, Push it on the number stack.
+? Else if you read a (, Push it on the operator stack.
+? Else if you read an operator op :
+?	While the top of the stack has a higher precedence than op
+?		Evaluate the top.
+?	Push op on the oper­ator stack.
+? Else if you read a ) :
+?	While the top of the stack is not a (
+?		Evaluate the top.
+?	Pop the (.
+? Else if there is no more input:
+?	While the operator stack is not empty
+?		Evaluate the top.
+
+
+ * E15.18 
+ * Add a % (remainder) operator to the expression calculator of Section 15.6.3.
+
+ * E15.19 
+ * Add a ^ (power) operator to the expression calculator of Section 15.6.3. 
+ * For example, 2 ^ 3 evaluates to 8. As in mathematics, your power operator 
+ * should be evaluated from the right. That is, 2 ^ 3 ^ 2 is 2 ^ (3 ^ 2), not 
+ * (2 ^ 3) ^ 2. (That’s more useful because you could get the latter as 
+ * 2 ^ (3 × 2).)
+
  */
 public class ExpressionCalculator {
 	public static void main(String[] args) {
@@ -15,25 +42,43 @@ public class ExpressionCalculator {
 		Stack<Character> opstack = new Stack<>();
 
 		int pos = 0;
+		// * deal with input
 		while (pos < expression.length()) {
 			char ch = expression.charAt(pos);
 			pos++;
+
+			// * is operator
 			if (isOperator(ch)) {
+				// * operator stack is empty
 				if (opstack.size() == 0) {
 					opstack.push(ch);
-				} else {
+				} 
+				// * if not, check top operator
+				else {
 					char oldOp = opstack.pop();
-					if (precedence(ch) > precedence(oldOp)) {
+					// ! special case for ^, which is evaluated from right
+					if (ch == '^'){
 						opstack.push(oldOp);
-					} else {
+					}
+					// * new operator > top operator, push them back
+					else if (precedence(ch) > precedence(oldOp)) {
+						opstack.push(oldOp);
+					} 
+					// * or evaluate old operator with operands
+					else {
 						evaluateTop(numstack, oldOp);
 					}
 					opstack.push(ch);
 				}
-			} else if (ch == '(') {
+			} 
+			// * is left parenthesis
+			else if (ch == '(') {
 				opstack.push(ch);
-			} else if (ch == ')') {
+			} 
+			// * is right parenthesis
+			else if (ch == ')') {
 				boolean done = false;
+				// * evaluate from top of operator stack until left parenthesis
 				while (!done) {
 					if (opstack.size() == 0) {
 						error("No matching (");
@@ -45,17 +90,23 @@ public class ExpressionCalculator {
 						evaluateTop(numstack, oldOp);
 					}
 				}
-			} else if (Character.isDigit(ch)) {
+			} 
+			// * is a digit
+			else if (Character.isDigit(ch)) {
 				int start = pos - 1;
 				while (pos < expression.length() && Character.isDigit(expression.charAt(pos))) {
 					pos++;
 				}
 				String num = expression.substring(start, pos);
 				numstack.push(Integer.parseInt(num));
-			} else {
+			} 
+			// * error handling
+			else {
 				error("Number, operator, or parenthesis expected.");
 			}
 		}
+
+		// * after dealing input, deal with remaining in stacks
 		while (opstack.size() > 0) {
 			char oldOp = opstack.pop();
 			if (oldOp == '(') {
@@ -80,7 +131,8 @@ public class ExpressionCalculator {
 	 * @return true if s is one of: + - * / ^
 	 */
 	public static boolean isOperator(char ch) {
-		return ch == '+' || ch == '-' || ch == '*' || ch == '/';
+		return ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '%' ||
+		ch == '^';
 	}
 
 	/**
@@ -102,8 +154,10 @@ public class ExpressionCalculator {
 	public static int precedence(char ch) {
 		if (ch == '+' || ch == '-') {
 			return 1;
-		} else if (ch == '*' || ch == '/') {
+		} else if (ch == '*' || ch == '/' || ch == '%') {
 			return 2;
+		} else if(ch == '^'){
+			return 3;
 		} else {
 			return 0;
 		}
@@ -119,13 +173,21 @@ public class ExpressionCalculator {
 		if (num.size() == 0) {
 			error("Syntax error");
 		}
+
 		int y = num.pop();
 		if (num.size() == 0) {
 			error("Syntax error");
 		}
+
 		int x = num.pop();
 		int z = 0;
-		if (op == '*') {
+
+		if(op == '^'){
+			z = x;
+			for(int i = 0; i < y-1; i++){
+				z *= x;
+			}
+		}else if (op == '*') {
 			z = x * y;
 		} else if (op == '/') {
 			if (y == 0) {
@@ -133,7 +195,13 @@ public class ExpressionCalculator {
 			} else {
 				z = x / y;
 			}
-		} else if (op == '+') {
+		} else if(op == '%'){
+			if(y == 0){
+				error("Divide by 0");
+			}else{
+				z = x % y;
+			}
+		}else if (op == '+') {
 			z = x + y;
 		} else if (op == '-') {
 			z = x - y;
