@@ -9,7 +9,7 @@ import java.util.*;
 public class WordFrequency {
 	public static void main(String[] args) throws FileNotFoundException {
 		Map<String, Integer> frequencies = new TreeMap<>();
-		Scanner in = new Scanner(new File("alice30.txt"));
+		Scanner in = new Scanner(new File("data/alice30.txt"));
 		while (in.hasNext()) {
 			String word = clean(in.next());
 

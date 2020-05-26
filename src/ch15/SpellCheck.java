@@ -10,8 +10,8 @@ public class SpellCheck {
 	public static void main(String[] args) throws FileNotFoundException {
 		// Read the dictionary and the document
 
-		Set<String> dictionaryWords = readWords("words");
-		Set<String> documentWords = readWords("alice30.txt");
+		Set<String> dictionaryWords = readWords("data/words");
+		Set<String> documentWords = readWords("data/alice30.txt");
 
 		// Print all words that are in the document but not the dictionary
 
