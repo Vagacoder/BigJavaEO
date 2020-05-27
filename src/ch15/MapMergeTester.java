@@ -6,8 +6,8 @@ public class MapMergeTester {
 
 	public static void main(String[] args) {
 		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-		map.put(1, 20);
-		map.put(2, 22);
+		map.put(1, 1);
+		map.put(2, 2);
 		map.put(3, null);
 		System.out.println(map); // {1=1, 2=2, 3=null}
 
