@@ -118,9 +118,11 @@ public class Path {
 	}
 
 	public String toString() {
-		String result = "(" + startingRow + "," + startingColumn + ")" + "NESW".charAt(startingDirection);
+		String result = "(" + startingRow + "," + startingColumn + ")" 
+			+ "NESW".charAt(startingDirection);
 		if (endingRow != startingRow || endingColumn != startingColumn) {
-			result = result + "<->(" + endingRow + "," + endingColumn + ")" + "NESW".charAt(endingDirection);
+			result = result + "<->(" + endingRow + "," + endingColumn + ")" 
+			+ "NESW".charAt(endingDirection);
 		}
 		return result;
 	}
