@@ -4,10 +4,8 @@ package ch15;
 * 
 */
 
-public class BankSimulationRunner
-{
-   public static void main(String[] args)
-   {
+public class BankSimulationRunner {
+   public static void main(String[] args) {
       final double START_TIME = 9 * 60; // 9 a.m.
       final double END_TIME = 17 * 60; // 5 p.m.
 
