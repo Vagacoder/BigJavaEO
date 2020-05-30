@@ -4,7 +4,10 @@ package ch17;
  * A binary tree in which each node has two children.
  * 
  * E17.2 Add a method countNodesWithOneChild to the BinaryTree class.
-
+ * 
+ * E17.3 Add a method swapChildren that swaps all left and right children to the 
+ * BinaryTree class.
+ * 
  */
 public class BinaryTree {
 
@@ -88,6 +91,9 @@ public class BinaryTree {
     * @return the root data
     */
    public Object data() {
+      if(root == null){
+         return null;
+      }
       return root.data;
    }
 
@@ -134,4 +140,23 @@ public class BinaryTree {
       return (n.left == null && n.right != null)||
          (n.left != null && n.right == null);
    }
+
+   // * E17.3
+   public void swapChildren(){
+      swapChildren(this.root);
+   }
+
+   private void swapChildren(Node n){
+      if(n == null){
+         return;
+      }
+      Node temp = n.left;
+      n.left = n.right;
+      n.right = temp;
+      swapChildren(n.left);
+      swapChildren(n.right);
+   }
+
+   // * E17.4
+
 }
