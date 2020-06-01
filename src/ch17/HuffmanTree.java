@@ -75,8 +75,8 @@ public class HuffmanTree {
          } else {
             n = n.right;
          }
-         if (n.left == null) // n is a leaf
-         {
+         // ! n is a leaf, read the character and reset n to root
+         if (n.left == null) {
             result = result + n.character;
             n = root;
          }
@@ -91,6 +91,5 @@ public class HuffmanTree {
       }
       return map;
    }
-
 
 }

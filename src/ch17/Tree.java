@@ -76,36 +76,36 @@ public class Tree {
    // Additional methods will be added in later sections.
 
    // * E17.1
-   public int leafCount(){
+   public int leafCount() {
       return leafCount(this.root);
    }
 
-   private int leafCount(Node n){
-      if(isLeaf(n)){
+   private int leafCount(Node n) {
+      if (isLeaf(n)) {
          return 1;
-      }else{
+      } else {
          int sum = 0;
-         for(Node child : n.children){
+         for (Node child : n.children) {
             sum += leafCount(child);
          }
          return sum;
       }
    }
 
-   private boolean isLeaf(Node n){
+   private boolean isLeaf(Node n) {
       return n.children.size() == 0;
    }
 
    // * R17.2
-   public int maxSibling(){
+   public int maxSibling() {
       return maxSibling(root);
    }
 
-   private int maxSibling(Node n){
+   private int maxSibling(Node n) {
       int max = n.children.size();
-      for(Node child:n.children){
+      for (Node child : n.children) {
          int maxChildSiblingNumber = maxSibling(child);
-         if(maxChildSiblingNumber > max){
+         if (maxChildSiblingNumber > max) {
             max = maxChildSiblingNumber;
          }
       }
