@@ -157,6 +157,10 @@ public class BinaryTree {
       swapChildren(n.right);
    }
 
-   // * E17.4
+   // * E17.8 helper
+   public Node getRoot(){
+      return this.root;
+   }
+
 
 }
