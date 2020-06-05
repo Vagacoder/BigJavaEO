@@ -8,8 +8,8 @@ package ch18;
  */ 
 public class PairUtil{
     	
-	public static Pair swap(Pair pair){
-        Pair newPair = new Pair();
+	public static <T, S> Pair<S, T> swap(Pair<T, S> pair){
+        Pair<S, T> newPair = new Pair<>();
         newPair.first = pair.getSecond();
         newPair.second = pair.getFirst();
         return newPair;
