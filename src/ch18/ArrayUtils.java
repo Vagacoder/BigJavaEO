@@ -1,5 +1,6 @@
 package ch18;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import ch10.*;
@@ -13,6 +14,9 @@ import ch10.*;
  * and students is an ArrayList<Student>, then append(people, students) should 
  * compile but append(students, people) should not.
  * 
+ * E18.18 Modify the method of Exercise E18.17 so that it receives and returns 
+ * arrays, not array lists. Hint: Arrays.copyOf.
+
  */
 public class ArrayUtils {
 
@@ -50,6 +54,39 @@ public class ArrayUtils {
 		}
 		return result;
 	}
+
+	// * E18.18, solution 1: use Object[] then cast to T[]
+	public static <T> T[] append1(T[]a, T[]b){
+		T[] result = (T[]) new Object[a.length + b.length];
+
+		for(int i = 0; i < a.length; i++){
+			result[i] = a[i];
+		}
+
+		for(int i = 0; i < b.length; i++){
+			result[a.length+i] = b[i];
+		}
+
+		return result;
+	}
+
+	// * E18.18, solution 2: use reflection
+	public static <T> T[] append2(T[]a, T[]b){
+		Class arrayClass = a.getClass();
+		Class elementClass = arrayClass.getComponentType();
+		T[] result = (T[]) Array.newInstance(elementClass, a.length+b.length);
+		
+		for(int i = 0; i < a.length; i++){
+			result[i] = a[i];
+		}
+
+		for(int i = 0; i < b.length; i++){
+			result[a.length+i] = b[i];
+		}
+
+		return result;
+	}
+
 
 	public static void main(String[] args){
 		ArrayList<Person> p = new ArrayList<>();
