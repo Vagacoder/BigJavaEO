@@ -5,9 +5,10 @@ import java.util.*;
 
 public class StreamDemo {
     public static void main(String[] args) throws IOException {
-	// Scanner in = new Scanner(new File("../countries.txt"));
-	Scanner in1 = new Scanner(System.in);
-	Scanner in = new Scanner(new File("data.txt"));
+	Scanner in = new Scanner(new File("data/countries.txt"));
+	// Scanner in = new Scanner(new File("data/data.txt"));
+
+	// Scanner in1 = new Scanner(System.in);
 
 	// This file contains one country name per line
 	List<String> wordList = new ArrayList<>();
@@ -30,7 +31,8 @@ public class StreamDemo {
 	count = wordList.stream().filter(w -> w.length() > 10).count();
 
 	System.out.println("Long words: " + count);
+
 	in.close();
-	in1.close();
+	// in1.close();
     }
 }

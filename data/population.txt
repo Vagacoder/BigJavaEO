@@ -1,0 +1,239 @@
+Afghanistan|South Asia|31822848
+Akrotiri|Europe|15700
+Albania|Europe|3020209
+Algeria|Africa|38813722
+American Samoa|Australia-Oceania|54517
+Andorra|Europe|85458
+Angola|Africa|19088106
+Anguilla|Central America and Carribean|16086
+Antigua and Barbuda|Central America and Carribean|91295
+Argentina|South America|43024374
+Armenia|Middle East|3060631
+Aruba|Central America and Carribean|110663
+Australia|Australia-Oceania|22507617
+Austria|Europe|8223062
+Azerbaijan|Middle East|9686210
+Bahamas, The|Central America and Carribean|321834
+Bahrain|Middle East|1314089
+Bangladesh|South Asia|166280712
+Barbados|Central America and Carribean|289680
+Belarus|Europe|9608058
+Belgium|Europe|10449361
+Belize|Central America and Carribean|340844
+Benin|Africa|10160556
+Bermuda|North America|69839
+Bhutan|South Asia|733643
+Bolivia|South America|10631486
+Bosnia and Herzegovina|Europe|3871643
+Botswana|Africa|2155784
+Brazil|South America|202656788
+British Virgin Islands|Central America and Carribean|32680
+Brunei|East and Southeast Asia|422675
+Bulgaria|Europe|6924716
+Burkina Faso|Africa|18365123
+Burma|East and Southeast Asia|55746253
+Burundi|Africa|10395931
+Cabo Verde|Africa|538535
+Cambodia|East and Southeast Asia|15458332
+Cameroon|Africa|23130708
+Canada|North America|34834841
+Cayman Islands|Central America and Carribean|54914
+Central African Republic|Africa|5277959
+Chad|Africa|11412107
+Chile|South America|17363894
+China|East and Southeast Asia|1355692576
+Christmas Island|Australia-Oceania|1530
+Cocos (Keeling) Islands|Australia-Oceania|596
+Colombia|South America|46245297
+Comoros|Africa|766865
+Congo, Democratic Republic of the|Africa|77433744
+Congo, Republic of the|Africa|4662446
+Cook Islands|Australia-Oceania|10134
+Costa Rica|Central America and Carribean|4755234
+Cote d'Ivoire|Africa|22848945
+Croatia|Europe|4470534
+Cuba|Central America and Carribean|11047251
+Curacao|Central America and Carribean|146836
+Cyprus|Europe|1172458
+Czech Republic|Europe|10627448
+Denmark|Europe|5569077
+Dhekelia|Europe|15700
+Djibouti|Africa|810179
+Dominica|Central America and Carribean|73449
+Dominican Republic|Central America and Carribean|10349741
+Ecuador|South America|15654411
+Egypt|Africa|86895099
+El Salvador|Central America and Carribean|6125512
+Equatorial Guinea|Africa|722254
+Eritrea|Africa|6380803
+Estonia|Europe|1257921
+Ethiopia|Africa|96633458
+Falkland Islands (Islas Malvinas)|South America|2840
+Faroe Islands|Europe|49947
+Fiji|Australia-Oceania|903207
+Finland|Europe|5268799
+France|Europe|66259012
+French Polynesia|Australia-Oceania|280026
+Gabon|Africa|1672597
+Gambia, The|Africa|1925527
+Gaza Strip|Middle East|1816379
+Georgia|Middle East|4935880
+Germany|Europe|80996685
+Ghana|Africa|25758108
+Gibraltar|Europe|29185
+Greece|Europe|10775557
+Greenland|North America|57728
+Grenada|Central America and Carribean|110152
+Guam|Australia-Oceania|161001
+Guatemala|Central America and Carribean|14647083
+Guernsey|Europe|65849
+Guinea|Africa|11474383
+Guinea-Bissau|Africa|1693398
+Guyana|South America|735554
+Haiti|Central America and Carribean|9996731
+Holy See (Vatican City)|Europe|842
+Honduras|Central America and Carribean|8598561
+Hong Kong|East and Southeast Asia|7112688
+Hungary|Europe|9919128
+Iceland|Europe|317351
+India|South Asia|1236344631
+Indonesia|East and Southeast Asia|253609643
+Iran|Middle East|80840713
+Iraq|Middle East|32585692
+Ireland|Europe|4832765
+Isle of Man|Europe|86866
+Israel|Middle East|7821850
+Italy|Europe|61680122
+Jamaica|Central America and Carribean|2930050
+Japan|East and Southeast Asia|127103388
+Jersey|Europe|96513
+Jordan|Middle East|7930491
+Kazakhstan|Central Asia|17948816
+Kenya|Africa|45010056
+Kiribati|Australia-Oceania|104488
+Korea, North|East and Southeast Asia|24851627
+Korea, South|East and Southeast Asia|49039986
+Kosovo|Europe|1859203
+Kuwait|Middle East|2742711
+Kyrgyzstan|Central Asia|5604212
+Laos|East and Southeast Asia|6803699
+Latvia|Europe|2165165
+Lebanon|Middle East|5882562
+Lesotho|Africa|1942008
+Liberia|Africa|4092310
+Libya|Africa|6244174
+Liechtenstein|Europe|37313
+Lithuania|Europe|3505738
+Luxembourg|Europe|520672
+Macau|East and Southeast Asia|587914
+Macedonia|Europe|2091719
+Madagascar|Africa|23201926
+Malawi|Africa|17377468
+Malaysia|East and Southeast Asia|30073353
+Maldives|South Asia|393595
+Mali|Africa|16455903
+Malta|Europe|412655
+Marshall Islands|Australia-Oceania|70983
+Mauritania|Africa|3516806
+Mauritius|Africa|1331155
+Mexico|North America|120286655
+Micronesia, Federated States of|Australia-Oceania|105681
+Moldova|Europe|3583288
+Monaco|Europe|30508
+Mongolia|East and Southeast Asia|2953190
+Montenegro|Europe|650036
+Montserrat|Central America and Carribean|5215
+Morocco|Africa|32987206
+Mozambique|Africa|24692144
+Namibia|Africa|2198406
+Nauru|Australia-Oceania|9488
+Nepal|South Asia|30986975
+Netherlands|Europe|16877351
+New Caledonia|Australia-Oceania|267840
+New Zealand|Australia-Oceania|4401916
+Nicaragua|Central America and Carribean|5848641
+Niger|Africa|17466172
+Nigeria|Africa|177155754
+Niue|Australia-Oceania|1190
+Norfolk Island|Australia-Oceania|2210
+Northern Mariana Islands|Australia-Oceania|51483
+Norway|Europe|5147792
+Oman|Middle East|3219775
+Pakistan|South Asia|196174380
+Palau|Australia-Oceania|21186
+Panama|Central America and Carribean|3608431
+Papua New Guinea|East and Southeast Asia|6552730
+Paraguay|South America|6703860
+Peru|South America|30147935
+Philippines|East and Southeast Asia|107668231
+Pitcairn Islands|Australia-Oceania|48
+Poland|Europe|38346279
+Portugal|Europe|10813834
+Puerto Rico|Central America and Carribean|3620897
+Qatar|Middle East|2123160
+Romania|Europe|21729871
+Russia|Central Asia|142470272
+Rwanda|Africa|12337138
+Saint Barthelemy|Central America and Carribean|7267
+Saint Helena, Ascension, and Tristan da Cunha|Africa|7776
+Saint Kitts and Nevis|Central America and Carribean|51538
+Saint Lucia|Central America and Carribean|163362
+Saint Martin|Central America and Carribean|31530
+Saint Pierre and Miquelon|North America|5716
+Saint Vincent and the Grenadines|Central America and Carribean|102918
+Samoa|Australia-Oceania|196628
+San Marino|Europe|32742
+Sao Tome and Principe|Africa|190428
+Saudi Arabia|Middle East|27345986
+Senegal|Africa|13635927
+Serbia|Europe|7209764
+Seychelles|Africa|91650
+Sierra Leone|Africa|5743725
+Singapore|East and Southeast Asia|5567301
+Sint Maarten|Central America and Carribean|39689
+Slovakia|Europe|5443583
+Slovenia|Europe|1988292
+Solomon Islands|Australia-Oceania|609883
+Somalia|Africa|10428043
+South Africa|Africa|48375645
+South Sudan|Africa|11562695
+Spain|Europe|47737941
+Sri Lanka|South Asia|21866445
+Sudan|Africa|35482233
+Suriname|South America|573311
+Svalbard|Europe|1872
+Swaziland|Africa|1419623
+Sweden|Europe|9723809
+Switzerland|Europe|8061516
+Syria|Middle East|17951639
+Taiwan|East and Southeast Asia|23359928
+Tajikistan|Central Asia|8051512
+Tanzania|Africa|49639138
+Thailand|East and Southeast Asia|67741401
+Timor-Leste|East and Southeast Asia|1201542
+Togo|Africa|7351374
+Tokelau|Australia-Oceania|1337
+Tonga|Australia-Oceania|106440
+Trinidad and Tobago|Central America and Carribean|1223916
+Tunisia|Africa|10937521
+Turkey|Middle East|81619392
+Turkmenistan|Central Asia|5171943
+Turks and Caicos Islands|Central America and Carribean|49070
+Tuvalu|Australia-Oceania|10782
+Uganda|Africa|35918915
+Ukraine|Europe|44291413
+United Arab Emirates|Middle East|5628805
+United Kingdom|Europe|63742977
+United States|North America|318892103
+Uruguay|South America|3332972
+Uzbekistan|Central Asia|28929716
+Vanuatu|Australia-Oceania|266937
+Venezuela|South America|28868486
+Vietnam|East and Southeast Asia|93421835
+Virgin Islands|Central America and Carribean|104170
+Wallis and Futuna|Australia-Oceania|15561
+West Bank|Middle East|2731052
+Western Sahara|Africa|554795
+Yemen|Middle East|26052966
+Zambia|Africa|14638505
+Zimbabwe|Africa|13771721
