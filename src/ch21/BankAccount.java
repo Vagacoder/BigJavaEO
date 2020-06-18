@@ -1,9 +1,15 @@
 package ch21;
 
+import java.io.Serializable;
+
 /**
  * A bank account has a balance that can be changed by deposits and withdrawals.
  */
-public class BankAccount {
+public class BankAccount implements Serializable{
+   /**
+    *
+    */
+   private static final long serialVersionUID = -1189392027174012635L;
    private int accountNumber;
    private double balance;
 
