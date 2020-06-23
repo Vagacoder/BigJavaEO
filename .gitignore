@@ -1,2 +1,5 @@
 /bin/
 *.class
+src/derby.log
+src/BigJavaDB/
+src/ch24/derby.jar
