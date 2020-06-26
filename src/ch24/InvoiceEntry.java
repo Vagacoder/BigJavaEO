@@ -172,7 +172,8 @@ public class InvoiceEntry {
    private static void showInvoice(Connection conn, int id) throws SQLException {
       try (PreparedStatement stat = conn.prepareStatement("SELECT Customer.Name, Customer.Address, "
             + "Customer.City, Customer.State, Customer.Zip " + "FROM Customer, Invoice "
-            + "WHERE Customer.Customer_Number = Invoice.Customer_Number " + "AND Invoice.Invoice_Number = ?")) {
+            + "WHERE Customer.Customer_Number = Invoice.Customer_Number "
+             + "AND Invoice.Invoice_Number = ?")) {
          stat.setInt(1, id);
          ResultSet result = stat.executeQuery();
          result.next();
