@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<purse>
+    <coin>
+        <value>0.5</value>
+        <name lang="en">half dollar</name>
+    </coin>
+    <coin>
+        <value>0.25</value>
+        <name lang="en">quarter</name>
+    </coin>
+</purse>

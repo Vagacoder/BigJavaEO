@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<items>
+   <item>
+      <product>
+         <description>Ink Jet Refill Kit</description>
+         <price>29.95</price>
+      </product>
+      <quantity>8</quantity>
+   </item>
+   <item>
+      <product>
+         <description>4-port Mini Hub</description>
+         <price>19.95</price>
+      </product>
+      <quantity>4</quantity>
+   </item>
+</items>
+
