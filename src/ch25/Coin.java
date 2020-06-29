@@ -6,4 +6,13 @@ package ch25;
 
 public class Coin {
     
+    double value;
+    String name;
+    String lang;
+
+    public Coin(double value, String name, String lang){
+        this.value = value;
+        this.name = name;
+        this.lang = lang;
+    }
 }
