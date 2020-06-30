@@ -19,7 +19,8 @@ public class ItemListBuilderDemo
       items.add(new LineItemX(new Product("Hair dryer", 24.95), 1));
 
       ItemListBuilder builder = new ItemListBuilder();
-      Document doc = builder.build(items);         
+      Document doc = builder.build(items);   
+            
       DOMImplementation impl = doc.getImplementation();
       DOMImplementationLS implLS 
             = (DOMImplementationLS) impl.getFeature("LS", "3.0");

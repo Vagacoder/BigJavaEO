@@ -39,5 +39,25 @@ public class Address
       return name + "\n" + street + "\n"
             + city + ", " + state + " " + zip;
    }
+
+   public String getName(){
+      return name;
+   }
+
+   public String getStreet(){
+      return street;
+   }
+
+   public String getCity(){
+      return city;
+   }
+
+   public String getState(){
+      return state;
+   }
+
+   public String getZip(){
+      return zip;
+   }
 }
 
