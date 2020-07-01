@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bank [
+<!ELEMENT bank (account*)>
+<!ELEMENT account (number, balance)>
+<!ELEMENT number (#PCDATA)>
+<!ELEMENT balance (#PCDATA)>
+]>
 <bank>
     <account>
         <number>1</number>
         <balance>0.0</balance>
-    </account><account>
+    </account>
+    <account>
         <number>2</number>
         <balance>10000000.00</balance>
-    </account><account>
+    </account>
+    <account>
         <number>3</number>
         <balance>1295.32</balance>
     </account>

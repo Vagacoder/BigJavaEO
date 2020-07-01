@@ -47,6 +47,8 @@ import org.xml.sax.SAXException;
 </purse>
 
  * 
+ * E25.3 Repeat Exercise E25.1, using a DTD for validation.
+ * data/pusr.xml is updated by adding DTD
  */
 
 public class PurseParser {
@@ -56,6 +58,7 @@ public class PurseParser {
 
     public PurseParser(String filename) throws ParserConfigurationException, SAXException, IOException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        factory.setValidating(true);
         DocumentBuilder builder = factory.newDocumentBuilder();
         if (filename.length() == 0) {
             filename = "data/purse.xml";

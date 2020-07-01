@@ -26,6 +26,7 @@ import org.xml.sax.SAXException;
  * Your program should construct a Bank object and print the total value of the 
  * balances in the accounts.
  * 
+ * E25.5 Repeat Exercise E25.4, using a DTD for validation.
  */
 public class BankParse {
 
@@ -35,6 +36,7 @@ public class BankParse {
     public BankParse(String filename) throws ParserConfigurationException, SAXException, IOException {
         this.bank = new Bank();
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        dbf.setValidating(true);
         DocumentBuilder builder = dbf.newDocumentBuilder();
 
         if (filename.length() == 0) {

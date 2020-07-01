@@ -1,4 +1,11 @@
 <?xml version="1.0"?>
+<!DOCTYPE purse [
+<!ELEMENT purse (coin*)>
+<!ELEMENT coin (value, name)>
+<!ELEMENT value (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ATTLIST name lang CDATA "en">
+]>
 <purse>
     <coin>
         <value>0.5</value>
