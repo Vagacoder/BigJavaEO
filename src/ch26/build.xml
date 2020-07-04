@@ -1,0 +1,63 @@
+<project default="install">
+
+   <property environment="env"/>
+   <property file="build.properties"/> 
+   <property name="appdir" value="${basedir}/${app}"/>
+   <basename property="appname" file="${appdir}"/>
+   <property name="builddir" value="${appdir}/build"/>
+   <property name="warfile" value="${builddir}/${appname}.war"/>
+   
+   <path id="classpath">
+      <pathelement location="${jsf.api.jar}"/>
+   </path>
+   
+   <target name="init">
+      <fail unless="app" message="Run ant -Dapp=..."/>
+   </target>
+
+   <target name="prepare" depends="init"
+         description="Create build directory.">
+      <mkdir dir="${builddir}"/>
+      <mkdir dir="${builddir}/WEB-INF"/>
+      <mkdir dir="${builddir}/WEB-INF/classes"/>
+   </target>
+
+   <target name="copy" depends="prepare"
+         description="Copy files to build directory.">
+      <copy todir="${builddir}" failonerror="false" verbose="true">
+         <fileset dir="${appdir}">
+            <exclude name="**/*.java"/>
+            <exclude name="build/**"/>
+         </fileset>
+      </copy>
+   </target>
+   
+   <target name="compile" depends="copy" 
+         description="Compile source files.">
+      <javac 
+         srcdir="${appdir}/WEB-INF/classes" 
+         destdir="${builddir}/WEB-INF/classes"
+         debug="true"
+         deprecation="true">
+         <compilerarg value="-Xlint:unchecked"/>
+         <include name="**/*.java"/>
+         <classpath refid="classpath"/>
+      </javac>
+   </target>
+   
+   <target name="war" depends="compile"
+         description="Build WAR file.">
+      <delete file="${warfile}"/>
+      <jar jarfile="${warfile}" basedir="${builddir}"/>
+   </target>
+
+   <target name="install" depends="war"
+         description="Deploy web application.">
+      <copy file="${warfile}" todir="${deploy.dir}"/>
+   </target>
+
+   <target name="clean" depends="init"
+         description="Clean everything.">
+      <delete dir="${builddir}"/>
+   </target>
+</project>
