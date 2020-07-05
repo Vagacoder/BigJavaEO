@@ -2,15 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
    xmlns:h="http://java.sun.com/jsf/html">
    <h:head>
-      <title>The time application</title>
+      <title>The timezone application</title>
    </h:head>
    <h:body>
       <h:form>
-         <p>           
-            The current time is #{timeBean.time}
+         <p>
+            The current time in #{timeZoneBean.city} is #{timeZoneBean.time}
          </p>
          <p>
-            #{dieBean.rolls}
+            <h:commandButton value="Back" action="index"/>
          </p>
       </h:form>
    </h:body>

@@ -2,15 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
    xmlns:h="http://java.sun.com/jsf/html">
    <h:head>
-      <title>The time application</title>
+      <title>The timezone application</title>
    </h:head>
    <h:body>
       <h:form>
-         <p>           
-            The current time is #{timeBean.time}
+         <p>
+            Set time zone:
+            <h:inputText value="#{timeZoneBean.city}"/>
          </p>
          <p>
-            #{dieBean.rolls}
+            <h:commandButton value="Submit" 
+               action="#{timeZoneBean.checkCity}"/>
          </p>
       </h:form>
    </h:body>

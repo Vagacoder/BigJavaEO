@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <title>The Lottery Application</title>
+</h:head>
+<h:body>
+    <h:form>
+        <h2>Welcom to Lottery</h2>
+        <h4>Please enter 6 numbers (0-9) below</h4>
+        <p>
+            Number 1:
+            <h:inputText value="#{lotteryBean.number1}" />
+        </p>
+        <p>
+            Number 2:
+            <h:inputText value="#{lotteryBean.number2}" />
+        </p>
+        <p>
+            Number 3:
+            <h:inputText value="#{lotteryBean.number3}" />
+        </p>
+        <p>
+            Number 4:
+            <h:inputText value="#{lotteryBean.number4}" />
+        </p>
+        <p>
+            Number 5:
+            <h:inputText value="#{lotteryBean.number5}" />
+        </p>
+        <p>
+            Number 6:
+            <h:inputText value="#{lotteryBean.number6}" />
+        </p>
+        <p>
+            <h:commandButton value="Submit" action="#{lotteryBean.checkNumbers}" />
+        </p>
+    </h:form>
+</h:body>
+
+</html>
