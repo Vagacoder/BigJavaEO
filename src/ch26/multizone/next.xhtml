@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:h="http://java.sun.com/jsf/html">
+   <h:head>
+      <title>The multizone application</title>
+   </h:head>
+   <h:body>
+      <h:form>
+         <p>
+            <h:selectOneRadio value="#{timeZoneBean.cityToRemove}"
+               layout="pageDirection">
+               <f:selectItems value="#{timeZoneBean.citiesAndTimes}"/>
+            </h:selectOneRadio>
+         </p>
+         <p>
+            <h:commandButton value="Remove selected" 
+                  action="#{timeZoneBean.removeCity}"/>
+            <h:commandButton value="Add another" action="index"/>
+         </p>
+      </h:form>
+   </h:body>
+</html>
