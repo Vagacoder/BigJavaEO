@@ -26,7 +26,9 @@ public class Evaluator {
 		while (!done) {
 			String next = tokenizer.peekToken();
 			if ("+".equals(next) || "-".equals(next)) {
-				tokenizer.nextToken(); // Discard "+" or "-"
+				// * already peek next token
+				// * Discard "+" or "-"
+				tokenizer.nextToken(); 
 				int value2 = getTermValue();
 				if ("+".equals(next)) {
 					value = value + value2;
@@ -34,6 +36,7 @@ public class Evaluator {
 					value = value - value2;
 				}
 			} else {
+				// ! recursive terminate here
 				done = true;
 			}
 		}
@@ -51,6 +54,7 @@ public class Evaluator {
 		while (!done) {
 			String next = tokenizer.peekToken();
 			if ("*".equals(next) || "/".equals(next)) {
+				// * already peek next token
 				tokenizer.nextToken();
 				int value2 = getFactorValue();
 				if ("*".equals(next)) {
@@ -74,9 +78,11 @@ public class Evaluator {
 		int value;
 		String next = tokenizer.peekToken();
 		if ("(".equals(next)) {
-			tokenizer.nextToken(); // Discard "("
+			// ! Discard "("
+			tokenizer.nextToken(); 
 			value = getExpressionValue();
-			tokenizer.nextToken(); // Discard ")"
+			// ! Discard ")"
+			tokenizer.nextToken(); 
 		} else {
 			value = Integer.parseInt(tokenizer.nextToken());
 		}
