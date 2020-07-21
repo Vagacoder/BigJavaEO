@@ -167,6 +167,7 @@ public class RedBlackTree {
 
       // ? toBeRemoved contains obj
 
+      // * one child is empty or both children are empty
       // * If one of the children is empty, use the other
       if (toBeRemoved.left == null || toBeRemoved.right == null) {
          Node newChild;
@@ -181,17 +182,14 @@ public class RedBlackTree {
          return;
       }
 
-      // Neither subtree is empty
-
-      // Find smallest element of the right subtree
-
+      // * Neither subtree is empty
+      // * Find smallest element of the right subtree
       Node smallest = toBeRemoved.right;
       while (smallest.left != null) {
          smallest = smallest.left;
       }
 
-      // smallest contains smallest child in right subtree
-
+      // * smallest contains smallest child in right subtree
       // Move contents, unlink child
 
       toBeRemoved.data = smallest.data;
@@ -293,11 +291,15 @@ public class RedBlackTree {
     * @param toBeRemoved the node that is to be removed
     */
    private void fixBeforeRemove(Node toBeRemoved) {
+      // ! For node to be removed, either one child is empty or both children are empty
+      // * if node to be removed is red, just remove it, do nothing else.
       if (toBeRemoved.color == RED) {
          return;
       }
 
-      if (toBeRemoved.left != null || toBeRemoved.right != null) // It is not a leaf
+      // * node is black
+      // * It is not a leaf, must has only one child. P.793 picture at bottom.
+      if (toBeRemoved.left != null || toBeRemoved.right != null) 
       {
          // Color the child black
          if (toBeRemoved.left == null) {
@@ -305,7 +307,9 @@ public class RedBlackTree {
          } else {
             toBeRemoved.left.color = BLACK;
          }
-      } else {
+      } 
+      // * It is a black leaf
+      else {
          bubbleUp(toBeRemoved.parent);
       }
    }
@@ -317,13 +321,17 @@ public class RedBlackTree {
     *               done)
     */
    private void bubbleUp(Node parent) {
+      // * if node to be removed is root
       if (parent == null) {
          return;
       }
+
+      // * 'bubble up' routine operations
       parent.color++;
       parent.left.color--;
       parent.right.color--;
 
+      // * fix double-black/negative-red; double-red
       if (bubbleUpFix(parent.left)) {
          return;
       }
@@ -331,6 +339,8 @@ public class RedBlackTree {
          return;
       }
 
+      // * neither of fixNegativeRed/fixDoubleRed applies, and then we need to 
+      // * “bubble up” again, which pushes the double-black node closer to the root.
       if (parent.color == DOUBLE_BLACK) {
          if (parent.parent == null) {
             parent.color = BLACK;
@@ -347,10 +357,13 @@ public class RedBlackTree {
     * @return true if the tree was fixed
     */
    private boolean bubbleUpFix(Node child) {
+      // * fix double-black/negative-red
       if (child.color == NEGATIVE_RED) {
          fixNegativeRed(child);
          return true;
-      } else if (child.color == RED) {
+      } 
+      // * fix double-red
+      else if (child.color == RED) {
          if (child.left != null && child.left.color == RED) {
             fixDoubleRed(child.left);
             return true;
